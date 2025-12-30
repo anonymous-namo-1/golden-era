@@ -21,7 +21,7 @@ const Home = () => {
       {/* Hero */}
       <section className="hero-section relative px-4">
         <div className="hero-bg" />
-        <div className="max-w-7xl mx-auto text-center relative z-10 py-24 md:py-40">
+        <div className="max-w-7xl mx-auto text-center relative z-10 py-24 md:py-40 backdrop-blur-[2px] bg-white/5 rounded-3xl px-6">
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg animate-slide-up">
             <Star className="h-4 w-4 text-[#C9A961] fill-current" />
             <span className="text-sm font-medium text-gray-700">Trusted by 50,000+ customers</span>
