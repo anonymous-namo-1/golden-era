@@ -25,6 +25,7 @@ const Shop = () => {
 
   useEffect(() => {
     fetchProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category, filters, sort]);
 
   const fetchProducts = async () => {

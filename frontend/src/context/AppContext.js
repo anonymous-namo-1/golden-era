@@ -15,6 +15,7 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     fetchCart();
     fetchWishlist();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchCart = async () => {

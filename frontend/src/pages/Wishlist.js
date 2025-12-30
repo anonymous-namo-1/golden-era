@@ -13,6 +13,7 @@ const Wishlist = () => {
 
   useEffect(() => {
     fetchWishlistProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wishlist]);
 
   const fetchWishlistProducts = async () => {
