@@ -36,49 +36,49 @@ const Header = () => {
                 </button>
                 {showMegaMenu && (
                   <div className="mega-menu active" data-testid="mega-menu">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6 xl:gap-8">
+                    <div className="max-w-7xl mx-auto px-8 py-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12">
                       <div>
-                        <h3 className="font-semibold mb-3 text-[#C9A961]">By Category</h3>
-                        <ul className="space-y-2 text-sm">
-                          <li><Link to="/shop" className="hover:text-[#C9A961]">All Jewellery</Link></li>
-                          <li><Link to="/shop/Ring" className="hover:text-[#C9A961]">Rings</Link></li>
-                          <li><Link to="/shop/Earrings" className="hover:text-[#C9A961]">Earrings</Link></li>
-                          <li><Link to="/shop/Necklace" className="hover:text-[#C9A961]">Necklaces</Link></li>
-                          <li><Link to="/shop/Bracelet" className="hover:text-[#C9A961]">Bracelets</Link></li>
-                          <li><Link to="/shop/Bangle" className="hover:text-[#C9A961]">Bangles</Link></li>
+                        <h3 className="font-semibold mb-4 text-xs uppercase tracking-wider text-gray-600">By Category</h3>
+                        <ul className="space-y-3 text-sm">
+                          <li><Link to="/shop" className="block text-gray-700 hover:text-[#C9A961] transition-colors">All Jewellery</Link></li>
+                          <li><Link to="/shop/Ring" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Rings</Link></li>
+                          <li><Link to="/shop/Earrings" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Earrings</Link></li>
+                          <li><Link to="/shop/Necklace" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Necklaces</Link></li>
+                          <li><Link to="/shop/Bracelet" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Bracelets</Link></li>
+                          <li><Link to="/shop/Bangle" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Bangles</Link></li>
                         </ul>
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-3 text-[#C9A961]">By Metal</h3>
-                        <ul className="space-y-2 text-sm">
-                          <li><Link to="/shop?metal=Gold" className="hover:text-[#C9A961]">Gold</Link></li>
-                          <li><Link to="/shop?metal=Silver" className="hover:text-[#C9A961]">Silver</Link></li>
-                          <li><Link to="/shop?metal=Diamond" className="hover:text-[#C9A961]">Diamond</Link></li>
+                        <h3 className="font-semibold mb-4 text-xs uppercase tracking-wider text-gray-600">By Metal</h3>
+                        <ul className="space-y-3 text-sm">
+                          <li><Link to="/shop?metal=Gold" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Gold</Link></li>
+                          <li><Link to="/shop?metal=Silver" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Silver</Link></li>
+                          <li><Link to="/shop?metal=Diamond" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Diamond</Link></li>
                         </ul>
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-3 text-[#C9A961]">By Occasion</h3>
-                        <ul className="space-y-2 text-sm">
-                          <li><Link to="/shop?occasion=Wedding" className="hover:text-[#C9A961]">Wedding</Link></li>
-                          <li><Link to="/shop?occasion=Party" className="hover:text-[#C9A961]">Party</Link></li>
-                          <li><Link to="/shop?occasion=Daily" className="hover:text-[#C9A961]">Daily Wear</Link></li>
-                          <li><Link to="/shop?occasion=Festive" className="hover:text-[#C9A961]">Festive</Link></li>
-                          <li><Link to="/shop?occasion=Office" className="hover:text-[#C9A961]">Office</Link></li>
+                        <h3 className="font-semibold mb-4 text-xs uppercase tracking-wider text-gray-600">By Occasion</h3>
+                        <ul className="space-y-3 text-sm">
+                          <li><Link to="/shop?occasion=Wedding" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Wedding</Link></li>
+                          <li><Link to="/shop?occasion=Party" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Party</Link></li>
+                          <li><Link to="/shop?occasion=Daily" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Daily Wear</Link></li>
+                          <li><Link to="/shop?occasion=Festive" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Festive</Link></li>
+                          <li><Link to="/shop?occasion=Office" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Office</Link></li>
                         </ul>
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-3 text-[#C9A961]">By Gender</h3>
-                        <ul className="space-y-2 text-sm">
-                          <li><Link to="/shop?gender=Women" className="hover:text-[#C9A961]">Women</Link></li>
-                          <li><Link to="/shop?gender=Men" className="hover:text-[#C9A961]">Men</Link></li>
+                        <h3 className="font-semibold mb-4 text-xs uppercase tracking-wider text-gray-600">By Gender</h3>
+                        <ul className="space-y-3 text-sm">
+                          <li><Link to="/shop?gender=Women" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Women</Link></li>
+                          <li><Link to="/shop?gender=Men" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Men</Link></li>
                         </ul>
                       </div>
-                      <div>
-                        <h3 className="font-semibold mb-3 text-[#C9A961]">Collections</h3>
-                        <ul className="space-y-2 text-sm">
-                          <li><Link to="/collections" className="hover:text-[#C9A961]">All Collections</Link></li>
-                          <li><Link to="/shop?tags=bridal" className="hover:text-[#C9A961]">Bridal</Link></li>
-                          <li><Link to="/shop" className="hover:text-[#C9A961]">New Arrivals</Link></li>
+                      <div className="md:col-span-2 lg:col-span-1">
+                        <h3 className="font-semibold mb-4 text-xs uppercase tracking-wider text-gray-600">Collections</h3>
+                        <ul className="space-y-3 text-sm">
+                          <li><Link to="/collections" className="block text-gray-700 hover:text-[#C9A961] transition-colors">All Collections</Link></li>
+                          <li><Link to="/shop?tags=bridal" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Bridal</Link></li>
+                          <li><Link to="/shop" className="block text-gray-700 hover:text-[#C9A961] transition-colors">New Arrivals</Link></li>
                         </ul>
                       </div>
                     </div>
