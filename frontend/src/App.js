@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { AppProvider } from './context/AppContext';
 import { Toaster } from './components/ui/toaster';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -25,12 +26,13 @@ import './App.css';
 
 function App() {
   return (
-    <ErrorBoundary>
-      <AppProvider>
-        <BrowserRouter>
-          <div className="App">
-            <Header />
-            <main className="main-content">
+    <HelmetProvider>
+      <ErrorBoundary>
+        <AppProvider>
+          <BrowserRouter>
+            <div className="App">
+              <Header />
+              <main className="main-content">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/shop" element={<Shop />} />
@@ -56,12 +58,13 @@ function App() {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
-            <Footer />
-            <Toaster />
-          </div>
-        </BrowserRouter>
-      </AppProvider>
-    </ErrorBoundary>
+              <Footer />
+              <Toaster />
+            </div>
+          </BrowserRouter>
+        </AppProvider>
+      </ErrorBoundary>
+    </HelmetProvider>
   );
 }
 

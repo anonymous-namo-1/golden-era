@@ -2,11 +2,14 @@ import React, { useState, useEffect, useCallback } from 'react';
 import api from '../services/api';
 import { toast } from '../hooks/use-toast';
 import { MapPin, Phone, Clock } from 'lucide-react';
+import { StoresErrorState } from '../components/ErrorState';
+import { StoreGridSkeleton } from '../components/skeletons/StoreCardSkeleton';
 
 const Stores = () => {
   const [stores, setStores] = useState([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const handleGetDirections = (store) => {
     // Use Google Maps with store address or coordinates if available
@@ -18,21 +21,40 @@ const Stores = () => {
   };
 
   const fetchStores = useCallback(async () => {
+    setLoading(true);
+    setError(null);
     try {
       const params = search ? `?city=${search}` : '';
       const res = await api.get(`/stores${params}`);
       setStores(res.data);
-      setLoading(false);
-    } catch (error) {
-      console.error('Error fetching stores:', error);
-      toast.error('Failed to load stores');
-      setLoading(false);
+    } catch (err) {
+      console.error('Error fetching stores:', err);
+      setError(err);
+      const errorMessage = err.response?.data?.detail ||
+                          err.message ||
+                          'Unable to load store locations. Please ensure the backend API is running.';
+      toast.error(errorMessage);
     }
+    setLoading(false);
   }, [search]);
 
   useEffect(() => {
     fetchStores();
   }, [fetchStores]);
+
+  // Show error state if there's an error
+  if (error && !loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center" style={{fontFamily: 'Playfair Display'}} data-testid="stores-title">
+            Visit Our Stores
+          </h1>
+          <StoresErrorState onRetry={fetchStores} />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
@@ -43,21 +65,20 @@ const Stores = () => {
 
         {/* Search */}
         <div className="max-w-md mx-auto mb-12">
-          <input 
+          <input
             type="text"
             placeholder="Search by city or pincode"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full border border-gray-300 rounded-lg px-4 py-3"
             data-testid="store-search-input"
+            aria-label="Search stores by city or pincode"
           />
         </div>
 
         {/* Stores Grid */}
         {loading ? (
-          <div className="flex justify-center">
-            <div className="spinner" />
-          </div>
+          <StoreGridSkeleton count={6} />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {stores.map(store => (

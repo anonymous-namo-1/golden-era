@@ -5,12 +5,16 @@ import { toast } from '../hooks/use-toast';
 import ProductCard from '../components/ProductCard';
 import { Slider } from '../components/ui/slider';
 import { Checkbox } from '../components/ui/checkbox';
+import { ProductsErrorState } from '../components/ErrorState';
+import { ProductGridSkeleton } from '../components/skeletons/ProductCardSkeleton';
+import { SEO } from '../components/SEO';
 
 const Shop = () => {
   const { category } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [filters, setFilters] = useState({
     minPrice: 0,
     maxPrice: 1000000,
@@ -24,6 +28,7 @@ const Shop = () => {
 
   const fetchProducts = useCallback(async () => {
     setLoading(true);
+    setError(null);
     try {
       const params = new URLSearchParams();
       if (category) params.append('category', category);
@@ -43,9 +48,13 @@ const Shop = () => {
 
       const res = await api.get(`/products?${params}`);
       setProducts(res.data.products || []);
-    } catch (error) {
-      console.error('Error fetching products:', error);
-      toast.error('Failed to load products');
+    } catch (err) {
+      console.error('Error fetching products:', err);
+      setError(err);
+      const errorMessage = err.response?.data?.detail ||
+                          err.message ||
+                          'Unable to load products. Please ensure the backend API is running.';
+      toast.error(errorMessage);
     }
     setLoading(false);
   }, [category, filters, sort, searchParams]);
@@ -58,8 +67,36 @@ const Shop = () => {
     setFilters(prev => ({ ...prev, [key]: value }));
   };
 
+  // SEO metadata
+  const searchQuery = searchParams.get('search');
+  const seoTitle = category
+    ? `${category.charAt(0).toUpperCase() + category.slice(1)} Jewelry Collection`
+    : searchQuery
+    ? `Search Results for "${searchQuery}"`
+    : 'Shop All Jewelry';
+
+  const seoDescription = category
+    ? `Explore our exquisite ${category} collection. Handcrafted gold and diamond jewelry with certified quality and timeless designs.`
+    : searchQuery
+    ? `Find the perfect jewelry piece. Browse our collection of ${searchQuery} and more premium handcrafted jewelry.`
+    : 'Browse our complete collection of handcrafted gold and diamond jewelry. Premium quality, certified purity, timeless designs, nationwide delivery.';
+
+  const seoUrl = `https://golden-era-black.vercel.app/shop${category ? '/' + category : ''}${searchQuery ? '?search=' + searchQuery : ''}`;
+
+  // Show error state if there's an error
+  if (error && !loading) {
+    return (
+      <>
+        <SEO title={seoTitle} description={seoDescription} url={seoUrl} />
+        <ProductsErrorState onRetry={fetchProducts} />
+      </>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <>
+      <SEO title={seoTitle} description={seoDescription} url={seoUrl} />
+      <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex gap-8">
           {/* Filters Sidebar */}
@@ -196,9 +233,7 @@ const Shop = () => {
 
             {/* Products */}
             {loading ? (
-              <div className="flex justify-center items-center h-64">
-                <div className="spinner" />
-              </div>
+              <ProductGridSkeleton count={8} />
             ) : (
               <>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" data-testid="products-grid">
@@ -216,7 +251,8 @@ const Shop = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
