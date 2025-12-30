@@ -1,0 +1,25 @@
+Components needed:
+- Header.js (with mega menu, search, cart icon)
+- Footer.js (comprehensive links)
+- ProductCard.js (with wishlist, hover)
+- FilterSidebar.js (for shop page)
+- QuizModal.js (find your piece)
+
+Pages needed (15+ pages):
+- Home.js
+- Shop.js (PLP with filters)
+- ProductDetail.js (PDP with full details)
+- Cart.js
+- Checkout.js
+- Stores.js
+- Appointment.js
+- GoldExchange.js
+- About.js
+- Contact.js
+- Wishlist.js
+- GoldRate.js
+- Guides.js
+- Collections.js
+- PolicyPage.js (reusable for all policies)
+
+Total: 5 components + 15 pages = 20 files

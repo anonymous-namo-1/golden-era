@@ -1,0 +1,1494 @@
+[
+  {
+    "id": "prod_001",
+    "name": "Eternal Elegance Gold Necklace",
+    "sku": "GN-22K-001",
+    "category": "Necklace",
+    "metal": "Gold",
+    "purity": "22K",
+    "metalColor": "Yellow",
+    "grossWeight": 15.5,
+    "price": 95000,
+    "description": "Exquisite 22K gold necklace with intricate traditional design, perfect for special occasions.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["traditional", "festive", "wedding"],
+    "occasion": ["Wedding", "Festive"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.8,
+    "reviewCount": 47,
+    "dimensions": {
+      "length": ["16 inches", "18 inches"]
+    },
+    "priceBreakup": {
+      "metalCost": 85000,
+      "stoneCost": 0,
+      "makingCharges": 8500,
+      "gst": 1500
+    }
+  },
+  {
+    "id": "prod_002",
+    "name": "Classic Diamond Solitaire Ring",
+    "sku": "DR-18K-002",
+    "category": "Ring",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "White",
+    "grossWeight": 3.2,
+    "price": 125000,
+    "description": "Stunning 18K white gold ring featuring a brilliant cut diamond solitaire. A timeless symbol of love.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["engagement", "modern", "diamond"],
+    "occasion": ["Wedding", "Party"],
+    "gender": "Women",
+    "stoneDetails": {
+      "type": "Diamond",
+      "carat": 1.0,
+      "clarity": "VS1",
+      "color": "F"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.9,
+    "reviewCount": 89,
+    "dimensions": {
+      "sizes": ["6", "7", "8", "9"]
+    },
+    "priceBreakup": {
+      "metalCost": 25000,
+      "stoneCost": 85000,
+      "makingCharges": 12000,
+      "gst": 3000
+    }
+  },
+  {
+    "id": "prod_003",
+    "name": "Heritage Gold Bangles (Set of 2)",
+    "sku": "GB-22K-003",
+    "category": "Bangle",
+    "metal": "Gold",
+    "purity": "22K",
+    "metalColor": "Yellow",
+    "grossWeight": 45.0,
+    "price": 285000,
+    "description": "Traditional 22K gold bangles with ornate carving. A perfect addition to your bridal collection.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["traditional", "bridal", "set"],
+    "occasion": ["Wedding", "Festive"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.7,
+    "reviewCount": 62,
+    "dimensions": {
+      "sizes": ["2.4", "2.6", "2.8"]
+    },
+    "priceBreakup": {
+      "metalCost": 255000,
+      "stoneCost": 0,
+      "makingCharges": 25500,
+      "gst": 4500
+    }
+  },
+  {
+    "id": "prod_004",
+    "name": "Minimalist Silver Earrings",
+    "sku": "SE-925-004",
+    "category": "Earrings",
+    "metal": "Silver",
+    "purity": "925",
+    "metalColor": "Silver",
+    "grossWeight": 5.2,
+    "price": 3500,
+    "description": "Contemporary 925 sterling silver earrings with clean lines. Perfect for daily wear.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["minimal", "modern", "daily"],
+    "occasion": ["Daily", "Office"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": false
+    },
+    "rating": 4.6,
+    "reviewCount": 124,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 2500,
+      "stoneCost": 0,
+      "makingCharges": 800,
+      "gst": 200
+    }
+  },
+  {
+    "id": "prod_005",
+    "name": "Rose Gold Chain Bracelet",
+    "sku": "BC-18K-005",
+    "category": "Bracelet",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "Rose",
+    "grossWeight": 8.5,
+    "price": 52000,
+    "description": "Delicate 18K rose gold chain bracelet with modern appeal. Elegant and versatile.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["modern", "minimal", "trendy"],
+    "occasion": ["Party", "Office"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.7,
+    "reviewCount": 38,
+    "dimensions": {
+      "length": ["7 inches", "8 inches"]
+    },
+    "priceBreakup": {
+      "metalCost": 45000,
+      "stoneCost": 0,
+      "makingCharges": 6000,
+      "gst": 1000
+    }
+  },
+  {
+    "id": "prod_006",
+    "name": "Diamond Studded Gold Pendant",
+    "sku": "DP-18K-006",
+    "category": "Pendant",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "Yellow",
+    "grossWeight": 4.8,
+    "price": 68000,
+    "description": "Beautiful 18K yellow gold pendant adorned with small diamonds in a floral pattern.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["diamond", "elegant", "gift"],
+    "occasion": ["Party", "Festive"],
+    "gender": "Women",
+    "stoneDetails": {
+      "type": "Diamond",
+      "carat": 0.5,
+      "clarity": "VS2",
+      "color": "G"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.8,
+    "reviewCount": 55,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 35000,
+      "stoneCost": 28000,
+      "makingCharges": 4000,
+      "gst": 1000
+    }
+  },
+  {
+    "id": "prod_007",
+    "name": "Traditional Gold Jhumkas",
+    "sku": "GE-22K-007",
+    "category": "Earrings",
+    "metal": "Gold",
+    "purity": "22K",
+    "metalColor": "Yellow",
+    "grossWeight": 12.0,
+    "price": 75000,
+    "description": "Classic 22K gold jhumka earrings with traditional temple design and pearls.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["traditional", "jhumka", "festive"],
+    "occasion": ["Wedding", "Festive"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.9,
+    "reviewCount": 78,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 68000,
+      "stoneCost": 0,
+      "makingCharges": 6000,
+      "gst": 1000
+    }
+  },
+  {
+    "id": "prod_008",
+    "name": "Silver Statement Necklace",
+    "sku": "SN-925-008",
+    "category": "Necklace",
+    "metal": "Silver",
+    "purity": "925",
+    "metalColor": "Silver",
+    "grossWeight": 35.0,
+    "price": 18500,
+    "description": "Bold 925 sterling silver necklace with contemporary geometric design.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["statement", "modern", "bold"],
+    "occasion": ["Party", "Festive"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": false
+    },
+    "rating": 4.5,
+    "reviewCount": 42,
+    "dimensions": {
+      "length": ["18 inches"]
+    },
+    "priceBreakup": {
+      "metalCost": 15000,
+      "stoneCost": 0,
+      "makingCharges": 3000,
+      "gst": 500
+    }
+  },
+  {
+    "id": "prod_009",
+    "name": "White Gold Diamond Earrings",
+    "sku": "DE-18K-009",
+    "category": "Earrings",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "White",
+    "grossWeight": 6.5,
+    "price": 95000,
+    "description": "Stunning 18K white gold earrings with brilliant cut diamonds. Perfect for special occasions.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["diamond", "elegant", "party"],
+    "occasion": ["Party", "Wedding"],
+    "gender": "Women",
+    "stoneDetails": {
+      "type": "Diamond",
+      "carat": 0.75,
+      "clarity": "VS1",
+      "color": "E"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.9,
+    "reviewCount": 67,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 35000,
+      "stoneCost": 52000,
+      "makingCharges": 6500,
+      "gst": 1500
+    }
+  },
+  {
+    "id": "prod_010",
+    "name": "Gold Chain for Men",
+    "sku": "GC-22K-010",
+    "category": "Chain",
+    "metal": "Gold",
+    "purity": "22K",
+    "metalColor": "Yellow",
+    "grossWeight": 25.0,
+    "price": 158000,
+    "description": "Solid 22K gold chain with a bold design. Perfect for men who appreciate fine jewelry.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["men", "chain", "bold"],
+    "occasion": ["Daily", "Party"],
+    "gender": "Men",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.7,
+    "reviewCount": 34,
+    "dimensions": {
+      "length": ["20 inches", "22 inches", "24 inches"]
+    },
+    "priceBreakup": {
+      "metalCost": 142000,
+      "stoneCost": 0,
+      "makingCharges": 14200,
+      "gst": 1800
+    }
+  },
+  {
+    "id": "prod_011",
+    "name": "Bridal Gold Choker Set",
+    "sku": "BC-22K-011",
+    "category": "Necklace",
+    "metal": "Gold",
+    "purity": "22K",
+    "metalColor": "Yellow",
+    "grossWeight": 85.0,
+    "price": 535000,
+    "description": "Magnificent 22K gold bridal choker set with matching earrings. A treasure for your special day.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["bridal", "set", "traditional"],
+    "occasion": ["Wedding"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 5.0,
+    "reviewCount": 23,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 480000,
+      "stoneCost": 0,
+      "makingCharges": 48000,
+      "gst": 7000
+    }
+  },
+  {
+    "id": "prod_012",
+    "name": "Silver Oxidized Jhumkas",
+    "sku": "SE-925-012",
+    "category": "Earrings",
+    "metal": "Silver",
+    "purity": "925",
+    "metalColor": "Silver",
+    "grossWeight": 8.5,
+    "price": 2800,
+    "description": "Beautiful 925 silver oxidized jhumkas with traditional Indian motifs.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["traditional", "oxidized", "ethnic"],
+    "occasion": ["Festive", "Daily"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": false
+    },
+    "rating": 4.4,
+    "reviewCount": 156,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 2000,
+      "stoneCost": 0,
+      "makingCharges": 650,
+      "gst": 150
+    }
+  },
+  {
+    "id": "prod_013",
+    "name": "Rose Gold Stud Earrings",
+    "sku": "RE-14K-013",
+    "category": "Earrings",
+    "metal": "Gold",
+    "purity": "14K",
+    "metalColor": "Rose",
+    "grossWeight": 2.5,
+    "price": 18500,
+    "description": "Dainty 14K rose gold stud earrings perfect for everyday elegance.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["minimal", "daily", "modern"],
+    "occasion": ["Daily", "Office"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.6,
+    "reviewCount": 92,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 15000,
+      "stoneCost": 0,
+      "makingCharges": 3000,
+      "gst": 500
+    }
+  },
+  {
+    "id": "prod_014",
+    "name": "Diamond Tennis Bracelet",
+    "sku": "DB-18K-014",
+    "category": "Bracelet",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "White",
+    "grossWeight": 12.0,
+    "price": 285000,
+    "description": "Exquisite 18K white gold tennis bracelet with uniform diamonds all around.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["diamond", "luxury", "elegant"],
+    "occasion": ["Party", "Wedding"],
+    "gender": "Women",
+    "stoneDetails": {
+      "type": "Diamond",
+      "carat": 3.0,
+      "clarity": "VS2",
+      "color": "F"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.9,
+    "reviewCount": 41,
+    "dimensions": {
+      "length": ["7 inches"]
+    },
+    "priceBreakup": {
+      "metalCost": 65000,
+      "stoneCost": 195000,
+      "makingCharges": 20000,
+      "gst": 5000
+    }
+  },
+  {
+    "id": "prod_015",
+    "name": "Gold Signet Ring for Men",
+    "sku": "GR-22K-015",
+    "category": "Ring",
+    "metal": "Gold",
+    "purity": "22K",
+    "metalColor": "Yellow",
+    "grossWeight": 8.0,
+    "price": 52000,
+    "description": "Classic 22K gold signet ring with modern finish. A statement of sophistication.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["men", "signet", "bold"],
+    "occasion": ["Daily", "Party"],
+    "gender": "Men",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.7,
+    "reviewCount": 28,
+    "dimensions": {
+      "sizes": ["8", "9", "10", "11"]
+    },
+    "priceBreakup": {
+      "metalCost": 45000,
+      "stoneCost": 0,
+      "makingCharges": 6000,
+      "gst": 1000
+    }
+  },
+  {
+    "id": "prod_016",
+    "name": "Pearl Drop Earrings",
+    "sku": "PE-18K-016",
+    "category": "Earrings",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "Yellow",
+    "grossWeight": 6.0,
+    "price": 42000,
+    "description": "Elegant 18K gold earrings with lustrous pearl drops. Timeless and graceful.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["pearl", "elegant", "classic"],
+    "occasion": ["Party", "Office"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.8,
+    "reviewCount": 73,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 32000,
+      "stoneCost": 8000,
+      "makingCharges": 1500,
+      "gst": 500
+    }
+  },
+  {
+    "id": "prod_017",
+    "name": "Silver Anklet",
+    "sku": "SA-925-017",
+    "category": "Anklet",
+    "metal": "Silver",
+    "purity": "925",
+    "metalColor": "Silver",
+    "grossWeight": 15.0,
+    "price": 5500,
+    "description": "Delicate 925 sterling silver anklet with traditional ghungroo design.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["traditional", "anklet", "ethnic"],
+    "occasion": ["Festive", "Daily"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": false
+    },
+    "rating": 4.5,
+    "reviewCount": 98,
+    "dimensions": {
+      "length": ["9 inches", "10 inches"]
+    },
+    "priceBreakup": {
+      "metalCost": 4500,
+      "stoneCost": 0,
+      "makingCharges": 850,
+      "gst": 150
+    }
+  },
+  {
+    "id": "prod_018",
+    "name": "Gemstone Cocktail Ring",
+    "sku": "GR-18K-018",
+    "category": "Ring",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "Rose",
+    "grossWeight": 7.5,
+    "price": 68000,
+    "description": "Bold 18K rose gold ring featuring a stunning emerald gemstone surrounded by diamonds.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["gemstone", "bold", "party"],
+    "occasion": ["Party"],
+    "gender": "Women",
+    "stoneDetails": {
+      "type": "Emerald",
+      "carat": 2.5,
+      "clarity": "VVS",
+      "color": "Green"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.8,
+    "reviewCount": 35,
+    "dimensions": {
+      "sizes": ["6", "7", "8"]
+    },
+    "priceBreakup": {
+      "metalCost": 35000,
+      "stoneCost": 28000,
+      "makingCharges": 4000,
+      "gst": 1000
+    }
+  },
+  {
+    "id": "prod_019",
+    "name": "Baby Gold Pendant",
+    "sku": "BP-22K-019",
+    "category": "Pendant",
+    "metal": "Gold",
+    "purity": "22K",
+    "metalColor": "Yellow",
+    "grossWeight": 1.5,
+    "price": 12500,
+    "description": "Adorable 22K gold pendant perfect for gifting to newborns and children.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["gift", "baby", "traditional"],
+    "occasion": ["Gift"],
+    "gender": "Unisex",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.9,
+    "reviewCount": 145,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 10500,
+      "stoneCost": 0,
+      "makingCharges": 1750,
+      "gst": 250
+    }
+  },
+  {
+    "id": "prod_020",
+    "name": "Gold Mangalsutra",
+    "sku": "GM-22K-020",
+    "category": "Necklace",
+    "metal": "Gold",
+    "purity": "22K",
+    "metalColor": "Yellow",
+    "grossWeight": 18.0,
+    "price": 112000,
+    "description": "Traditional 22K gold mangalsutra with black beads. A sacred symbol of marriage.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["mangalsutra", "traditional", "bridal"],
+    "occasion": ["Wedding"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.8,
+    "reviewCount": 67,
+    "dimensions": {
+      "length": ["26 inches", "28 inches"]
+    },
+    "priceBreakup": {
+      "metalCost": 100000,
+      "stoneCost": 0,
+      "makingCharges": 10500,
+      "gst": 1500
+    }
+  },
+  {
+    "id": "prod_021",
+    "name": "Layered Chain Necklace",
+    "sku": "CN-18K-021",
+    "category": "Necklace",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "Yellow",
+    "grossWeight": 10.5,
+    "price": 68000,
+    "description": "Trendy 18K gold layered chain necklace with modern appeal. Perfect for casual chic looks.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["modern", "layered", "trendy"],
+    "occasion": ["Daily", "Party"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.6,
+    "reviewCount": 54,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 58000,
+      "stoneCost": 0,
+      "makingCharges": 8500,
+      "gst": 1500
+    }
+  },
+  {
+    "id": "prod_022",
+    "name": "Nose Pin with Diamond",
+    "sku": "NP-18K-022",
+    "category": "Nose Pin",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "White",
+    "grossWeight": 0.8,
+    "price": 18500,
+    "description": "Delicate 18K white gold nose pin featuring a small diamond. Subtle elegance.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["diamond", "minimal", "daily"],
+    "occasion": ["Daily"],
+    "gender": "Women",
+    "stoneDetails": {
+      "type": "Diamond",
+      "carat": 0.1,
+      "clarity": "VS1",
+      "color": "D"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.7,
+    "reviewCount": 189,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 5000,
+      "stoneCost": 12000,
+      "makingCharges": 1200,
+      "gst": 300
+    }
+  },
+  {
+    "id": "prod_023",
+    "name": "Silver Coin with Lakshmi",
+    "sku": "SC-999-023",
+    "category": "Coin",
+    "metal": "Silver",
+    "purity": "999",
+    "metalColor": "Silver",
+    "grossWeight": 10.0,
+    "price": 5200,
+    "description": "Pure 999 silver coin featuring Goddess Lakshmi. Perfect for gifting and auspicious occasions.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["gift", "coin", "auspicious"],
+    "occasion": ["Gift", "Festive"],
+    "gender": "Unisex",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.9,
+    "reviewCount": 234,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 4500,
+      "stoneCost": 0,
+      "makingCharges": 600,
+      "gst": 100
+    }
+  },
+  {
+    "id": "prod_024",
+    "name": "Gold Toe Ring",
+    "sku": "TR-22K-024",
+    "category": "Toe Ring",
+    "metal": "Gold",
+    "purity": "22K",
+    "metalColor": "Yellow",
+    "grossWeight": 2.0,
+    "price": 14500,
+    "description": "Traditional 22K gold toe ring with intricate carving. A symbol of marital bliss.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["traditional", "toering", "ethnic"],
+    "occasion": ["Wedding", "Daily"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.6,
+    "reviewCount": 87,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 12500,
+      "stoneCost": 0,
+      "makingCharges": 1750,
+      "gst": 250
+    }
+  },
+  {
+    "id": "prod_025",
+    "name": "Diamond Halo Ring",
+    "sku": "DR-18K-025",
+    "category": "Ring",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "White",
+    "grossWeight": 4.5,
+    "price": 165000,
+    "description": "Breathtaking 18K white gold ring with a diamond halo setting. Perfect for engagements.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["engagement", "diamond", "halo"],
+    "occasion": ["Wedding"],
+    "gender": "Women",
+    "stoneDetails": {
+      "type": "Diamond",
+      "carat": 1.5,
+      "clarity": "VVS1",
+      "color": "D"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 5.0,
+    "reviewCount": 112,
+    "dimensions": {
+      "sizes": ["5", "6", "7", "8", "9"]
+    },
+    "priceBreakup": {
+      "metalCost": 30000,
+      "stoneCost": 120000,
+      "makingCharges": 12000,
+      "gst": 3000
+    }
+  },
+  {
+    "id": "prod_026",
+    "name": "Silver Kada for Men",
+    "sku": "SK-925-026",
+    "category": "Kada",
+    "metal": "Silver",
+    "purity": "925",
+    "metalColor": "Silver",
+    "grossWeight": 55.0,
+    "price": 28500,
+    "description": "Bold 925 sterling silver kada with modern design. Perfect for men who appreciate statement pieces.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["men", "kada", "bold"],
+    "occasion": ["Daily", "Party"],
+    "gender": "Men",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.7,
+    "reviewCount": 45,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 23000,
+      "stoneCost": 0,
+      "makingCharges": 5000,
+      "gst": 500
+    }
+  },
+  {
+    "id": "prod_027",
+    "name": "Antique Gold Necklace",
+    "sku": "AN-22K-027",
+    "category": "Necklace",
+    "metal": "Gold",
+    "purity": "22K",
+    "metalColor": "Yellow",
+    "grossWeight": 55.0,
+    "price": 345000,
+    "description": "Exquisite 22K gold antique necklace with temple jewelry design. A masterpiece of craftsmanship.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["antique", "temple", "traditional"],
+    "occasion": ["Wedding", "Festive"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.9,
+    "reviewCount": 38,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 310000,
+      "stoneCost": 0,
+      "makingCharges": 31000,
+      "gst": 4000
+    }
+  },
+  {
+    "id": "prod_028",
+    "name": "Gold Hoop Earrings",
+    "sku": "HE-18K-028",
+    "category": "Earrings",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "Yellow",
+    "grossWeight": 6.5,
+    "price": 42000,
+    "description": "Classic 18K gold hoop earrings with a modern twist. Versatile and stylish.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["hoop", "modern", "versatile"],
+    "occasion": ["Daily", "Party"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.8,
+    "reviewCount": 126,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 36000,
+      "stoneCost": 0,
+      "makingCharges": 5000,
+      "gst": 1000
+    }
+  },
+  {
+    "id": "prod_029",
+    "name": "Navratna Pendant",
+    "sku": "NP-22K-029",
+    "category": "Pendant",
+    "metal": "Gold",
+    "purity": "22K",
+    "metalColor": "Yellow",
+    "grossWeight": 6.0,
+    "price": 55000,
+    "description": "Auspicious 22K gold Navratna pendant featuring nine gemstones. Brings positivity and prosperity.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["navratna", "gemstone", "auspicious"],
+    "occasion": ["Daily", "Festive"],
+    "gender": "Unisex",
+    "stoneDetails": {
+      "type": "Multiple",
+      "carat": 2.0,
+      "clarity": "Various",
+      "color": "Multiple"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.8,
+    "reviewCount": 95,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 35000,
+      "stoneCost": 15000,
+      "makingCharges": 4000,
+      "gst": 1000
+    }
+  },
+  {
+    "id": "prod_030",
+    "name": "Diamond Band Ring",
+    "sku": "DB-18K-030",
+    "category": "Ring",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "Rose",
+    "grossWeight": 5.5,
+    "price": 85000,
+    "description": "Beautiful 18K rose gold band ring studded with small diamonds all around.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["diamond", "band", "wedding"],
+    "occasion": ["Wedding", "Daily"],
+    "gender": "Women",
+    "stoneDetails": {
+      "type": "Diamond",
+      "carat": 0.8,
+      "clarity": "VS2",
+      "color": "G"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.9,
+    "reviewCount": 76,
+    "dimensions": {
+      "sizes": ["5", "6", "7", "8", "9"]
+    },
+    "priceBreakup": {
+      "metalCost": 35000,
+      "stoneCost": 42000,
+      "makingCharges": 6500,
+      "gst": 1500
+    }
+  },
+  {
+    "id": "prod_031",
+    "name": "Silver Payal (Anklet Set)",
+    "sku": "SP-925-031",
+    "category": "Anklet",
+    "metal": "Silver",
+    "purity": "925",
+    "metalColor": "Silver",
+    "grossWeight": 45.0,
+    "price": 18500,
+    "description": "Traditional 925 silver payal (anklet pair) with intricate ghungroo work.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["traditional", "payal", "ethnic"],
+    "occasion": ["Wedding", "Festive"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.7,
+    "reviewCount": 63,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 15000,
+      "stoneCost": 0,
+      "makingCharges": 3000,
+      "gst": 500
+    }
+  },
+  {
+    "id": "prod_032",
+    "name": "Gold Bracelet with Evil Eye",
+    "sku": "GB-18K-032",
+    "category": "Bracelet",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "Yellow",
+    "grossWeight": 7.5,
+    "price": 48000,
+    "description": "Trendy 18K gold bracelet featuring the protective evil eye design.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["modern", "protection", "trendy"],
+    "occasion": ["Daily", "Party"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.6,
+    "reviewCount": 82,
+    "dimensions": {
+      "length": ["7 inches", "8 inches"]
+    },
+    "priceBreakup": {
+      "metalCost": 40000,
+      "stoneCost": 0,
+      "makingCharges": 6500,
+      "gst": 1500
+    }
+  },
+  {
+    "id": "prod_033",
+    "name": "Kundan Polki Necklace",
+    "sku": "KN-22K-033",
+    "category": "Necklace",
+    "metal": "Gold",
+    "purity": "22K",
+    "metalColor": "Yellow",
+    "grossWeight": 75.0,
+    "price": 585000,
+    "description": "Magnificent 22K gold Kundan Polki necklace with uncut diamonds and enamel work.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["kundan", "polki", "bridal"],
+    "occasion": ["Wedding"],
+    "gender": "Women",
+    "stoneDetails": {
+      "type": "Uncut Diamond",
+      "carat": 8.0,
+      "clarity": "Natural",
+      "color": "Various"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 5.0,
+    "reviewCount": 29,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 420000,
+      "stoneCost": 135000,
+      "makingCharges": 25000,
+      "gst": 5000
+    }
+  },
+  {
+    "id": "prod_034",
+    "name": "Minimalist Gold Chain",
+    "sku": "GC-18K-034",
+    "category": "Chain",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "Yellow",
+    "grossWeight": 5.5,
+    "price": 36000,
+    "description": "Simple yet elegant 18K gold chain perfect for daily wear or layering.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["minimal", "chain", "layering"],
+    "occasion": ["Daily"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.7,
+    "reviewCount": 168,
+    "dimensions": {
+      "length": ["16 inches", "18 inches", "20 inches"]
+    },
+    "priceBreakup": {
+      "metalCost": 30000,
+      "stoneCost": 0,
+      "makingCharges": 5000,
+      "gst": 1000
+    }
+  },
+  {
+    "id": "prod_035",
+    "name": "Ruby Gold Pendant",
+    "sku": "RP-18K-035",
+    "category": "Pendant",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "Yellow",
+    "grossWeight": 5.5,
+    "price": 72000,
+    "description": "Stunning 18K gold pendant featuring a vibrant ruby surrounded by diamonds.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["ruby", "gemstone", "luxury"],
+    "occasion": ["Party", "Wedding"],
+    "gender": "Women",
+    "stoneDetails": {
+      "type": "Ruby",
+      "carat": 2.0,
+      "clarity": "VVS",
+      "color": "Red"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.9,
+    "reviewCount": 48,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 32000,
+      "stoneCost": 35000,
+      "makingCharges": 4000,
+      "gst": 1000
+    }
+  },
+  {
+    "id": "prod_036",
+    "name": "Gold Studs with Emerald",
+    "sku": "ES-18K-036",
+    "category": "Earrings",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "Yellow",
+    "grossWeight": 4.0,
+    "price": 58000,
+    "description": "Elegant 18K gold stud earrings featuring natural emeralds. Perfect for any occasion.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["emerald", "studs", "elegant"],
+    "occasion": ["Daily", "Party"],
+    "gender": "Women",
+    "stoneDetails": {
+      "type": "Emerald",
+      "carat": 1.5,
+      "clarity": "VVS",
+      "color": "Green"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.8,
+    "reviewCount": 72,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 25000,
+      "stoneCost": 28000,
+      "makingCharges": 4000,
+      "gst": 1000
+    }
+  },
+  {
+    "id": "prod_037",
+    "name": "Silver Ring with Turquoise",
+    "sku": "SR-925-037",
+    "category": "Ring",
+    "metal": "Silver",
+    "purity": "925",
+    "metalColor": "Silver",
+    "grossWeight": 6.5,
+    "price": 4500,
+    "description": "Bohemian 925 silver ring featuring a natural turquoise stone.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["bohemian", "turquoise", "casual"],
+    "occasion": ["Daily"],
+    "gender": "Women",
+    "stoneDetails": {
+      "type": "Turquoise",
+      "carat": 3.0,
+      "clarity": "Natural",
+      "color": "Blue"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": false
+    },
+    "rating": 4.6,
+    "reviewCount": 105,
+    "dimensions": {
+      "sizes": ["6", "7", "8"]
+    },
+    "priceBreakup": {
+      "metalCost": 2500,
+      "stoneCost": 1500,
+      "makingCharges": 400,
+      "gst": 100
+    }
+  },
+  {
+    "id": "prod_038",
+    "name": "Gold Charm Bracelet",
+    "sku": "CB-18K-038",
+    "category": "Bracelet",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "Rose",
+    "grossWeight": 9.5,
+    "price": 62000,
+    "description": "Adorable 18K rose gold charm bracelet with multiple charms. Personalize your style.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["charm", "personalized", "trendy"],
+    "occasion": ["Daily", "Gift"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.7,
+    "reviewCount": 94,
+    "dimensions": {
+      "length": ["7 inches"]
+    },
+    "priceBreakup": {
+      "metalCost": 52000,
+      "stoneCost": 0,
+      "makingCharges": 8500,
+      "gst": 1500
+    }
+  },
+  {
+    "id": "prod_039",
+    "name": "Temple Jewellery Earrings",
+    "sku": "TE-22K-039",
+    "category": "Earrings",
+    "metal": "Gold",
+    "purity": "22K",
+    "metalColor": "Yellow",
+    "grossWeight": 22.0,
+    "price": 138000,
+    "description": "Exquisite 22K gold temple jewelry earrings with intricate deity motifs.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["temple", "traditional", "festive"],
+    "occasion": ["Wedding", "Festive"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.9,
+    "reviewCount": 56,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 124000,
+      "stoneCost": 0,
+      "makingCharges": 12400,
+      "gst": 1600
+    }
+  },
+  {
+    "id": "prod_040",
+    "name": "Gold Infinity Pendant",
+    "sku": "IP-18K-040",
+    "category": "Pendant",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "White",
+    "grossWeight": 3.5,
+    "price": 28500,
+    "description": "Modern 18K white gold infinity pendant symbolizing eternal love. Perfect gift.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["infinity", "modern", "gift"],
+    "occasion": ["Gift", "Daily"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.8,
+    "reviewCount": 142,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 22000,
+      "stoneCost": 0,
+      "makingCharges": 5500,
+      "gst": 1000
+    }
+  },
+  {
+    "id": "prod_041",
+    "name": "Gold Earrings with Tanzanite",
+    "sku": "TE-18K-041",
+    "category": "Earrings",
+    "metal": "Gold",
+    "purity": "18K",
+    "metalColor": "White",
+    "grossWeight": 7.0,
+    "price": 88000,
+    "description": "Rare 18K white gold earrings featuring beautiful tanzanite gemstones.",
+    "images": [
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg",
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg"
+    ],
+    "tags": ["tanzanite", "rare", "luxury"],
+    "occasion": ["Party", "Wedding"],
+    "gender": "Women",
+    "stoneDetails": {
+      "type": "Tanzanite",
+      "carat": 2.5,
+      "clarity": "VVS",
+      "color": "Blue-Violet"
+    },
+    "availability": {
+      "ship": true,
+      "storePickup": true
+    },
+    "rating": 4.9,
+    "reviewCount": 37,
+    "dimensions": {},
+    "priceBreakup": {
+      "metalCost": 38000,
+      "stoneCost": 45000,
+      "makingCharges": 4000,
+      "gst": 1000
+    }
+  },
+  {
+    "id": "prod_042",
+    "name": "Silver Filigree Necklace",
+    "sku": "FN-925-042",
+    "category": "Necklace",
+    "metal": "Silver",
+    "purity": "925",
+    "metalColor": "Silver",
+    "grossWeight": 28.0,
+    "price": 15500,
+    "description": "Intricate 925 silver filigree necklace with traditional craftsmanship.",
+    "images": [
+      "https://images.pexels.com/photos/8084610/pexels-photo-8084610.jpeg",
+      "https://images.pexels.com/photos/10117812/pexels-photo-10117812.jpeg"
+    ],
+    "tags": ["filigree", "traditional", "crafted"],
+    "occasion": ["Festive", "Party"],
+    "gender": "Women",
+    "stoneDetails": null,
+    "availability": {
+      "ship": true,
+      "storePickup": false
+    },
+    "rating": 4.7,
+    "reviewCount": 68,
+    "dimensions": {
+      "length": ["18 inches"]
+    },
+    "priceBreakup": {
+      "metalCost": 12000,
+      "stoneCost": 0,
+      "makingCharges": 3000,
+      "gst": 500
+    }
+  }
+]

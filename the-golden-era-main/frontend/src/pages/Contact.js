@@ -1,0 +1,134 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import { Mail, Phone, MapPin } from 'lucide-react';
+
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(`${API}/contact`, formData);
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      }, 3000);
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      alert('Failed to send message. Please try again.');
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50 py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center" style={{fontFamily: 'Playfair Display'}}>
+          Contact Us
+        </h1>
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Have a question? We're here to help. Reach out to us and we'll get back to you as soon as possible.
+        </p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Info */}
+          <div className="space-y-8">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h2 className="text-xl font-semibold mb-6">Get in Touch</h2>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <Phone className="h-6 w-6 text-[#C9A961] flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-medium mb-1">Phone</h3>
+                    <p className="text-gray-600">+91 1800 123 4567</p>
+                    <p className="text-sm text-gray-500">Mon-Sat, 10 AM - 8 PM</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Mail className="h-6 w-6 text-[#C9A961] flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-medium mb-1">Email</h3>
+                    <p className="text-gray-600">support@thegoldenera.in</p>
+                    <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <MapPin className="h-6 w-6 text-[#C9A961] flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-medium mb-1">Head Office</h3>
+                    <p className="text-gray-600">123 Fashion Street, Fort<br />Mumbai - 400001, India</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="font-semibold mb-4">Business Hours</h3>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Monday - Saturday</span>
+                  <span className="font-medium">10:00 AM - 8:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Sunday</span>
+                  <span className="font-medium">11:00 AM - 7:00 PM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="bg-white p-8 rounded-lg shadow-sm">
+            {submitted ? (
+              <div className="text-center py-12">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Message Sent!</h3>
+                <p className="text-gray-600">We'll get back to you soon.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium mb-1">Name *</label>
+                  <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full border border-gray-300 rounded px-4 py-2" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1">Email *</label>
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full border border-gray-300 rounded px-4 py-2" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1">Phone</label>
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full border border-gray-300 rounded px-4 py-2" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1">Message *</label>
+                  <textarea name="message" value={formData.message} onChange={handleChange} required rows="5" className="w-full border border-gray-300 rounded px-4 py-2" />
+                </div>
+                <button type="submit" className="w-full btn-gold px-6 py-3 text-white font-medium">
+                  Send Message
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;
