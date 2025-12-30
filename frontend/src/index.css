@@ -482,13 +482,13 @@ html {
 
 @media (min-width: 1024px) {
     .mega-menu > div {
-        grid-template-columns: repeat(3, minmax(220px, 1fr)) !important;
+        grid-template-columns: repeat(3, minmax(240px, 1fr)) !important;
     }
 }
 
 @media (max-width: 1023px) {
     .mega-menu > div {
-        grid-template-columns: repeat(2, minmax(180px, 1fr)) !important;
+        grid-template-columns: repeat(2, minmax(200px, 1fr)) !important;
     }
 }
 
