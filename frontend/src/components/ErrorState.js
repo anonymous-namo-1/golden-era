@@ -14,8 +14,8 @@ export const ErrorState = ({
   return (
     <div className="min-h-[400px] flex items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-4">
-          <Icon className="h-8 w-8 text-red-600" />
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-red-200 rounded-full mb-4">
+          <Icon className="h-8 w-8 text-red-700" />
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 mb-2" style={{fontFamily: 'Playfair Display'}}>
@@ -54,7 +54,7 @@ export const ErrorState = ({
           <summary className="cursor-pointer text-sm text-gray-500 hover:text-gray-700 text-center">
             Technical Details
           </summary>
-          <pre className="mt-2 p-3 bg-gray-100 rounded text-xs overflow-x-auto text-left">
+          <pre className="mt-2 p-3 bg-gray-200 rounded text-xs overflow-x-auto text-left">
             {JSON.stringify({
               timestamp: new Date().toISOString(),
               userAgent: navigator.userAgent,
