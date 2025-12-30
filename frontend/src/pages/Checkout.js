@@ -1,36 +1,59 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
 import api from '../services/api';
 import { toast } from '../hooks/use-toast';
 import { useApp } from '../context/AppContext';
+
+const checkoutSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters').max(100, 'Name is too long'),
+  email: z.string().email('Please enter a valid email address'),
+  phone: z.string().regex(/^[0-9]{10}$/, 'Phone number must be exactly 10 digits'),
+  address: z.string().min(10, 'Address must be at least 10 characters').max(200, 'Address is too long'),
+  city: z.string().min(2, 'City must be at least 2 characters').max(50, 'City name is too long'),
+  state: z.string().min(2, 'State must be at least 2 characters').max(50, 'State name is too long'),
+  pincode: z.string().regex(/^[0-9]{6}$/, 'Pincode must be exactly 6 digits'),
+  paymentMethod: z.enum(['cod', 'razorpay'], { required_error: 'Please select a payment method' })
+});
 
 const Checkout = () => {
   const { cart, clearCart } = useApp();
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
-    city: '',
-    state: '',
-    pincode: '',
-    paymentMethod: 'cod'
+
+  const { register, handleSubmit, formState: { errors }, watch, trigger } = useForm({
+    resolver: zodResolver(checkoutSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      city: '',
+      state: '',
+      pincode: '',
+      paymentMethod: 'cod'
+    }
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const formData = watch();
+
+  const handleContinueToPayment = async () => {
+    // Validate step 1 fields before proceeding
+    const isValid = await trigger(['name', 'email', 'phone', 'address', 'city', 'state', 'pincode']);
+    if (isValid) {
+      setStep(2);
+    }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const onSubmit = async (data) => {
     try {
       await api.post(`/orders`, {
         items: cart,
         total: getTotal(),
-        address: formData,
-        paymentMethod: formData.paymentMethod
+        address: data,
+        paymentMethod: data.paymentMethod
       });
       await clearCart();
       toast.success('Order placed successfully! Thank you for your purchase.');
@@ -65,43 +88,89 @@ const Checkout = () => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-sm">
+        <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-6 rounded-lg shadow-sm">
           {step === 1 && (
             <div className="space-y-4">
               <h2 className="text-xl font-semibold mb-4">Delivery Address</h2>
               <div>
                 <label className="block text-sm font-medium mb-1">Full Name *</label>
-                <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full border border-gray-300 rounded px-4 py-2" data-testid="name-input" />
+                <input
+                  type="text"
+                  {...register('name')}
+                  className={`w-full border rounded px-4 py-2 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+                  data-testid="name-input"
+                />
+                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-1">Email *</label>
-                  <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full border border-gray-300 rounded px-4 py-2" data-testid="email-input" />
+                  <input
+                    type="email"
+                    {...register('email')}
+                    className={`w-full border rounded px-4 py-2 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                    data-testid="email-input"
+                  />
+                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Phone *</label>
-                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full border border-gray-300 rounded px-4 py-2" data-testid="phone-input" />
+                  <input
+                    type="tel"
+                    {...register('phone')}
+                    className={`w-full border rounded px-4 py-2 ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                    data-testid="phone-input"
+                    placeholder="10 digit number"
+                  />
+                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
                 </div>
               </div>
               <div>
                 <label className="block text-sm font-medium mb-1">Address *</label>
-                <textarea name="address" value={formData.address} onChange={handleChange} required rows="3" className="w-full border border-gray-300 rounded px-4 py-2" data-testid="address-input" />
+                <textarea
+                  {...register('address')}
+                  rows="3"
+                  className={`w-full border rounded px-4 py-2 ${errors.address ? 'border-red-500' : 'border-gray-300'}`}
+                  data-testid="address-input"
+                />
+                {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address.message}</p>}
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-1">City *</label>
-                  <input type="text" name="city" value={formData.city} onChange={handleChange} required className="w-full border border-gray-300 rounded px-4 py-2" />
+                  <input
+                    type="text"
+                    {...register('city')}
+                    className={`w-full border rounded px-4 py-2 ${errors.city ? 'border-red-500' : 'border-gray-300'}`}
+                  />
+                  {errors.city && <p className="text-red-500 text-sm mt-1">{errors.city.message}</p>}
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">State *</label>
-                  <input type="text" name="state" value={formData.state} onChange={handleChange} required className="w-full border border-gray-300 rounded px-4 py-2" />
+                  <input
+                    type="text"
+                    {...register('state')}
+                    className={`w-full border rounded px-4 py-2 ${errors.state ? 'border-red-500' : 'border-gray-300'}`}
+                  />
+                  {errors.state && <p className="text-red-500 text-sm mt-1">{errors.state.message}</p>}
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Pincode *</label>
-                  <input type="text" name="pincode" value={formData.pincode} onChange={handleChange} required className="w-full border border-gray-300 rounded px-4 py-2" />
+                  <input
+                    type="text"
+                    {...register('pincode')}
+                    className={`w-full border rounded px-4 py-2 ${errors.pincode ? 'border-red-500' : 'border-gray-300'}`}
+                    placeholder="6 digits"
+                  />
+                  {errors.pincode && <p className="text-red-500 text-sm mt-1">{errors.pincode.message}</p>}
                 </div>
               </div>
-              <button type="button" onClick={() => setStep(2)} className="btn-gold px-6 py-3 text-white font-medium" data-testid="continue-to-payment-btn">
+              <button
+                type="button"
+                onClick={handleContinueToPayment}
+                className="btn-gold px-6 py-3 text-white font-medium"
+                data-testid="continue-to-payment-btn"
+              >
                 Continue to Payment
               </button>
             </div>
@@ -112,14 +181,25 @@ const Checkout = () => {
               <h2 className="text-xl font-semibold mb-4">Payment Options</h2>
               <div className="space-y-3">
                 <label className="flex items-center p-4 border border-gray-300 rounded cursor-pointer hover:border-[#C9A961]">
-                  <input type="radio" name="paymentMethod" value="cod" checked={formData.paymentMethod === 'cod'} onChange={handleChange} className="mr-3" />
+                  <input
+                    type="radio"
+                    {...register('paymentMethod')}
+                    value="cod"
+                    className="mr-3"
+                  />
                   <div>
                     <p className="font-medium">Cash on Delivery</p>
                     <p className="text-sm text-gray-600">Pay when you receive your order</p>
                   </div>
                 </label>
                 <label className="flex items-center p-4 border border-gray-300 rounded cursor-pointer hover:border-[#C9A961] opacity-50">
-                  <input type="radio" name="paymentMethod" value="razorpay" disabled className="mr-3" />
+                  <input
+                    type="radio"
+                    {...register('paymentMethod')}
+                    value="razorpay"
+                    disabled
+                    className="mr-3"
+                  />
                   <div>
                     <p className="font-medium">Online Payment (Razorpay)</p>
                     <p className="text-sm text-gray-600">Cards, UPI, Net Banking, Wallets</p>

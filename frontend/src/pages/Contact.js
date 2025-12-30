@@ -1,30 +1,39 @@
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
 import api from '../services/api';
 import { toast } from '../hooks/use-toast';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
+const contactSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters').max(100, 'Name is too long'),
+  email: z.string().email('Please enter a valid email address'),
+  phone: z.string().regex(/^[0-9]{10}$/, 'Phone number must be exactly 10 digits'),
+  message: z.string().min(10, 'Message must be at least 10 characters').max(1000, 'Message is too long')
+});
+
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      message: ''
+    }
+  });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const onSubmit = async (data) => {
     try {
-      await api.post(`/contact`, formData);
+      await api.post(`/contact`, data);
       toast.success('Message sent successfully! We\'ll get back to you soon.');
       setSubmitted(true);
+      reset();
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ name: '', email: '', phone: '', message: '' });
       }, 3000);
     } catch (error) {
       console.error('Error submitting contact form:', error);
@@ -102,22 +111,43 @@ const Contact = () => {
                 <p className="text-gray-600">We'll get back to you soon.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium mb-1">Name *</label>
-                  <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full border border-gray-300 rounded px-4 py-2" />
+                  <input
+                    type="text"
+                    {...register('name')}
+                    className={`w-full border rounded px-4 py-2 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+                  />
+                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Email *</label>
-                  <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full border border-gray-300 rounded px-4 py-2" />
+                  <input
+                    type="email"
+                    {...register('email')}
+                    className={`w-full border rounded px-4 py-2 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                  />
+                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Phone</label>
-                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full border border-gray-300 rounded px-4 py-2" />
+                  <label className="block text-sm font-medium mb-1">Phone *</label>
+                  <input
+                    type="tel"
+                    {...register('phone')}
+                    className={`w-full border rounded px-4 py-2 ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                    placeholder="10 digit number"
+                  />
+                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Message *</label>
-                  <textarea name="message" value={formData.message} onChange={handleChange} required rows="5" className="w-full border border-gray-300 rounded px-4 py-2" />
+                  <textarea
+                    {...register('message')}
+                    rows="5"
+                    className={`w-full border rounded px-4 py-2 ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
+                  />
+                  {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
                 </div>
                 <button type="submit" className="w-full btn-gold px-6 py-3 text-white font-medium">
                   Send Message
