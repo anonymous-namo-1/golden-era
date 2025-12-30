@@ -17,13 +17,13 @@ const Header = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center group">
-              <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#C9A961] to-[#B89647] bg-clip-text text-transparent group-hover:scale-105 transition-transform" style={{fontFamily: 'Playfair Display'}}>
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-[#C9A961] to-[#B89647] bg-clip-text text-transparent group-hover:scale-105 transition-transform" style={{fontFamily: 'Playfair Display'}}>
                 The Golden Era
               </h1>
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8">
               <div 
                 className="relative"
                 onMouseEnter={() => setShowMegaMenu(true)}
@@ -34,7 +34,7 @@ const Header = () => {
                 </button>
                 {showMegaMenu && (
                   <div className="mega-menu active" data-testid="mega-menu">
-                    <div className="max-w-7xl mx-auto px-8 py-8 grid grid-cols-5 gap-8">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6 xl:gap-8">
                       <div>
                         <h3 className="font-semibold mb-3 text-[#C9A961]">By Category</h3>
                         <ul className="space-y-2 text-sm">
@@ -83,14 +83,14 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              <Link to="/collections" className="text-sm font-medium hover:text-[#C9A961] transition-colors">Collections</Link>
-              <Link to="/gold-rate" className="text-sm font-medium hover:text-[#C9A961] transition-colors">Gold Rate</Link>
-              <Link to="/stores" className="text-sm font-medium hover:text-[#C9A961] transition-colors">Stores</Link>
-              <Link to="/guides" className="text-sm font-medium hover:text-[#C9A961] transition-colors">Guides</Link>
+              <Link to="/collections" className="text-sm font-medium hover:text-[#C9A961] transition-colors whitespace-nowrap">Collections</Link>
+              <Link to="/gold-rate" className="text-sm font-medium hover:text-[#C9A961] transition-colors whitespace-nowrap">Gold Rate</Link>
+              <Link to="/stores" className="text-sm font-medium hover:text-[#C9A961] transition-colors whitespace-nowrap">Stores</Link>
+              <Link to="/guides" className="text-sm font-medium hover:text-[#C9A961] transition-colors whitespace-nowrap">Guides</Link>
             </nav>
 
             {/* Icons */}
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-3 sm:space-x-4 lg:space-x-6">
               <button className="hidden md:block hover:scale-110 transition-transform" onClick={() => navigate('/shop')} data-testid="search-button">
                 <Search className="h-5 w-5 text-gray-700 hover:text-[#C9A961] transition-colors" />
               </button>
