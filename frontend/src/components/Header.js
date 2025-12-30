@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, Heart, ShoppingCart, Menu, X, ChevronDown } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import SearchModal from './SearchModal';
 
 const Header = () => {
   const [showMegaMenu, setShowMegaMenu] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [showSearchModal, setShowSearchModal] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const { cart, wishlist } = useApp();
   const navigate = useNavigate();
@@ -91,7 +93,7 @@ const Header = () => {
 
             {/* Icons */}
             <div className="flex items-center space-x-3 sm:space-x-4 lg:space-x-6">
-              <button className="hidden md:block hover:scale-110 transition-transform" onClick={() => navigate('/shop')} data-testid="search-button">
+              <button className="hidden md:block hover:scale-110 transition-transform" onClick={() => setShowSearchModal(true)} data-testid="search-button">
                 <Search className="h-5 w-5 text-gray-700 hover:text-[#C9A961] transition-colors" />
               </button>
               <Link to="/account/wishlist" className="relative hover:scale-110 transition-transform" data-testid="wishlist-link">
@@ -141,6 +143,9 @@ const Header = () => {
           </div>
         </>
       )}
+
+      {/* Search Modal */}
+      <SearchModal isOpen={showSearchModal} onClose={() => setShowSearchModal(false)} />
     </>
   );
 };

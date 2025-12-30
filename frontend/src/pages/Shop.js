@@ -27,6 +27,11 @@ const Shop = () => {
     try {
       const params = new URLSearchParams();
       if (category) params.append('category', category);
+
+      // Add search query if present
+      const searchQuery = searchParams.get('search');
+      if (searchQuery) params.append('search', searchQuery);
+
       if (filters.metal) params.append('metal', filters.metal);
       if (filters.purity) params.append('purity', filters.purity);
       if (filters.metalColor) params.append('metalColor', filters.metalColor);
@@ -43,7 +48,7 @@ const Shop = () => {
       toast.error('Failed to load products');
     }
     setLoading(false);
-  }, [category, filters, sort]);
+  }, [category, filters, sort, searchParams]);
 
   useEffect(() => {
     fetchProducts();
@@ -165,11 +170,12 @@ const Shop = () => {
           {/* Products Grid */}
           <div className="flex-1">
             {/* Header */}
-            <div className="flex justify-between items-center mb-6">
-              <h1 className="text-2xl md:text-3xl font-bold" style={{fontFamily: 'Playfair Display'}}>
-                {category || 'All Jewellery'}
-              </h1>
-              <select 
+            <div className="mb-6">
+              <div className="flex justify-between items-center">
+                <h1 className="text-2xl md:text-3xl font-bold" style={{fontFamily: 'Playfair Display'}}>
+                  {category || 'All Jewellery'}
+                </h1>
+                <select 
                 value={sort} 
                 onChange={(e) => setSort(e.target.value)}
                 className="border border-gray-300 rounded px-4 py-2"
@@ -180,6 +186,12 @@ const Shop = () => {
                 <option value="price_low">Price: Low to High</option>
                 <option value="price_high">Price: High to Low</option>
               </select>
+              </div>
+              {searchParams.get('search') && (
+                <div className="mt-3 text-gray-600">
+                  Showing results for: <span className="font-semibold text-gray-900">"{searchParams.get('search')}"</span>
+                </div>
+              )}
             </div>
 
             {/* Products */}
