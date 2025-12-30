@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
-import axios from 'axios';
+import api from '../services/api';
+import { toast } from '../hooks/use-toast';
 import ProductCard from '../components/ProductCard';
 import { Slider } from '../components/ui/slider';
 import { Checkbox } from '../components/ui/checkbox';
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const Shop = () => {
   const { category } = useParams();
@@ -23,12 +22,7 @@ const Shop = () => {
   });
   const [sort, setSort] = useState('featured');
 
-  useEffect(() => {
-    fetchProducts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [category, filters, sort]);
-
-  const fetchProducts = async () => {
+  const fetchProducts = useCallback(async () => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
@@ -41,14 +35,19 @@ const Shop = () => {
       if (filters.minPrice) params.append('minPrice', filters.minPrice);
       if (filters.maxPrice < 1000000) params.append('maxPrice', filters.maxPrice);
       params.append('sort', sort);
-      
-      const res = await axios.get(`${API}/products?${params}`);
+
+      const res = await api.get(`/products?${params}`);
       setProducts(res.data.products || []);
     } catch (error) {
       console.error('Error fetching products:', error);
+      toast.error('Failed to load products');
     }
     setLoading(false);
-  };
+  }, [category, filters, sort]);
+
+  useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts]);
 
   const handleFilterChange = (key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }));

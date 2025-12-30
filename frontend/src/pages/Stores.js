@@ -1,30 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect, useCallback } from 'react';
+import api from '../services/api';
+import { toast } from '../hooks/use-toast';
 import { MapPin, Phone, Clock } from 'lucide-react';
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const Stores = () => {
   const [stores, setStores] = useState([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchStores();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [search]);
-
-  const fetchStores = async () => {
+  const fetchStores = useCallback(async () => {
     try {
       const params = search ? `?city=${search}` : '';
-      const res = await axios.get(`${API}/stores${params}`);
+      const res = await api.get(`/stores${params}`);
       setStores(res.data);
       setLoading(false);
     } catch (error) {
       console.error('Error fetching stores:', error);
+      toast.error('Failed to load stores');
       setLoading(false);
     }
-  };
+  }, [search]);
+
+  useEffect(() => {
+    fetchStores();
+  }, [fetchStores]);
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">

@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../services/api';
+import { toast } from '../hooks/use-toast';
 import { useApp } from '../context/AppContext';
 import { Trash2, Plus, Minus } from 'lucide-react';
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const Cart = () => {
   const { cart, updateCartItem, removeFromCart } = useApp();
@@ -12,19 +11,14 @@ const Cart = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetchCartProducts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cart]);
-
-  const fetchCartProducts = async () => {
+  const fetchCartProducts = useCallback(async () => {
     if (cart.length === 0) {
       setLoading(false);
       return;
     }
     try {
       const productIds = cart.map(item => item.productId);
-      const promises = productIds.map(id => axios.get(`${API}/products/${id}`));
+      const promises = productIds.map(id => api.get(`/products/${id}`));
       const responses = await Promise.all(promises);
       const productsMap = {};
       responses.forEach(res => {
@@ -34,9 +28,14 @@ const Cart = () => {
       setLoading(false);
     } catch (error) {
       console.error('Error fetching cart products:', error);
+      toast.error('Failed to load cart products');
       setLoading(false);
     }
-  };
+  }, [cart]);
+
+  useEffect(() => {
+    fetchCartProducts();
+  }, [fetchCartProducts]);
 
   const getTotal = () => {
     return cart.reduce((sum, item) => {

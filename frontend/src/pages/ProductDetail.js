@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../services/api';
+import { toast } from '../hooks/use-toast';
 import { useApp } from '../context/AppContext';
 import { Heart, ShoppingCart, ChevronRight, ChevronDown } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import ProductCard from '../components/ProductCard';
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -19,37 +18,39 @@ const ProductDetail = () => {
   const [selectedSize, setSelectedSize] = useState('');
   const [showPriceBreakup, setShowPriceBreakup] = useState(false);
 
-  useEffect(() => {
-    fetchProduct();
-    fetchRelated();
-    window.scrollTo(0, 0);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
-
-  const fetchProduct = async () => {
+  const fetchProduct = useCallback(async () => {
     try {
-      const res = await axios.get(`${API}/products/${id}`);
+      const res = await api.get(`/products/${id}`);
       setProduct(res.data);
       setLoading(false);
     } catch (error) {
       console.error('Error fetching product:', error);
+      toast.error('Failed to load product details');
       setLoading(false);
     }
-  };
+  }, [id]);
 
-  const fetchRelated = async () => {
+  const fetchRelated = useCallback(async () => {
     try {
-      const res = await axios.get(`${API}/products/related/${id}`);
+      const res = await api.get(`/products/related/${id}`);
       setRelated(res.data);
     } catch (error) {
       console.error('Error fetching related products:', error);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    fetchProduct();
+    fetchRelated();
+    window.scrollTo(0, 0);
+  }, [fetchProduct, fetchRelated]);
 
   const handleAddToCart = async () => {
     const success = await addToCart(product.id, 1, selectedSize);
     if (success) {
-      alert('Added to cart!');
+      toast.success('Added to cart!');
+    } else {
+      toast.error('Failed to add to cart');
     }
   };
 

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../services/api';
+import { toast } from '../hooks/use-toast';
 import { useApp } from '../context/AppContext';
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const Checkout = () => {
   const { cart, clearCart } = useApp();
@@ -27,22 +26,24 @@ const Checkout = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API}/orders`, {
+      await api.post(`/orders`, {
         items: cart,
         total: getTotal(),
         address: formData,
         paymentMethod: formData.paymentMethod
       });
       await clearCart();
-      alert('Order placed successfully!');
+      toast.success('Order placed successfully! Thank you for your purchase.');
       navigate('/');
     } catch (error) {
       console.error('Error placing order:', error);
-      alert('Failed to place order. Please try again.');
+      toast.error('Failed to place order. Please try again.');
     }
   };
 
   const getTotal = () => {
+    // Note: This calculation will be fixed when backend adds price to cart items
+    // For now, using item.price if available, otherwise 0
     return cart.reduce((sum, item) => sum + (item.price || 0) * item.quantity, 0);
   };
 

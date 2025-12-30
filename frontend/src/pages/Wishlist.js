@@ -1,30 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../services/api';
+import { toast } from '../hooks/use-toast';
 import { useApp } from '../context/AppContext';
 import ProductCard from '../components/ProductCard';
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const Wishlist = () => {
   const { wishlist } = useApp();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchWishlistProducts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [wishlist]);
-
-  const fetchWishlistProducts = async () => {
+  const fetchWishlistProducts = useCallback(async () => {
     if (wishlist.length === 0) {
       setLoading(false);
       return;
     }
     try {
       const productIds = wishlist.map(item => item.productId);
-      const promises = productIds.map(id => 
-        axios.get(`${API}/products/${id}`).catch(err => {
+      const promises = productIds.map(id =>
+        api.get(`/products/${id}`).catch(err => {
           console.warn(`Product ${id} not found`);
           return null;
         })
@@ -34,9 +28,14 @@ const Wishlist = () => {
       setLoading(false);
     } catch (error) {
       console.error('Error fetching wishlist products:', error);
+      toast.error('Failed to load wishlist');
       setLoading(false);
     }
-  };
+  }, [wishlist]);
+
+  useEffect(() => {
+    fetchWishlistProducts();
+  }, [fetchWishlistProducts]);
 
   if (loading) {
     return (

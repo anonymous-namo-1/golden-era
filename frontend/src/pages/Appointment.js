@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import api from '../services/api';
+import { toast } from '../hooks/use-toast';
 
 const Appointment = () => {
   const [formData, setFormData] = useState({
@@ -22,11 +21,12 @@ const Appointment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API}/appointments`, formData);
+      await api.post(`/appointments`, formData);
+      toast.success('Appointment booked successfully! We\'ll contact you shortly.');
       setSubmitted(true);
     } catch (error) {
       console.error('Error booking appointment:', error);
-      alert('Failed to book appointment. Please try again.');
+      toast.error('Failed to book appointment. Please try again.');
     }
   };
 

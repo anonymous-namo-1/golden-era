@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import api from '../services/api';
+import { toast } from '../hooks/use-toast';
 
 const GoldExchange = () => {
   const [formData, setFormData] = useState({
@@ -21,11 +20,12 @@ const GoldExchange = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API}/exchange-leads`, formData);
+      await api.post(`/exchange-leads`, formData);
+      toast.success('Request submitted successfully! We\'ll contact you soon.');
       setSubmitted(true);
     } catch (error) {
       console.error('Error submitting exchange request:', error);
-      alert('Failed to submit request. Please try again.');
+      toast.error('Failed to submit request. Please try again.');
     }
   };
 

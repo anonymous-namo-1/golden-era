@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../services/api';
+import { toast } from '../hooks/use-toast';
 import { Mail, Phone, MapPin } from 'lucide-react';
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +19,8 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API}/contact`, formData);
+      await api.post(`/contact`, formData);
+      toast.success('Message sent successfully! We\'ll get back to you soon.');
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
@@ -28,7 +28,7 @@ const Contact = () => {
       }, 3000);
     } catch (error) {
       console.error('Error submitting contact form:', error);
-      alert('Failed to send message. Please try again.');
+      toast.error('Failed to send message. Please try again.');
     }
   };
 
