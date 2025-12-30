@@ -2,8 +2,8 @@
 // Inspired by react-hot-toast library
 import * as React from "react"
 
-const TOAST_LIMIT = 1
-const TOAST_REMOVE_DELAY = 1000000
+const TOAST_LIMIT = 3
+const TOAST_REMOVE_DELAY = 5000
 
 const actionTypes = {
   ADD_TOAST: "ADD_TOAST",
@@ -151,5 +151,45 @@ function useToast() {
     dismiss: (toastId) => dispatch({ type: "DISMISS_TOAST", toastId }),
   };
 }
+
+// Helper functions for common toast types
+toast.success = (message, options = {}) => {
+  return toast({
+    title: options.title || "Success",
+    description: message,
+    variant: "default",
+    className: "bg-green-50 border-green-200 text-green-900",
+    ...options
+  });
+};
+
+toast.error = (message, options = {}) => {
+  return toast({
+    title: options.title || "Error",
+    description: message,
+    variant: "destructive",
+    ...options
+  });
+};
+
+toast.info = (message, options = {}) => {
+  return toast({
+    title: options.title || "Info",
+    description: message,
+    variant: "default",
+    className: "bg-blue-50 border-blue-200 text-blue-900",
+    ...options
+  });
+};
+
+toast.warning = (message, options = {}) => {
+  return toast({
+    title: options.title || "Warning",
+    description: message,
+    variant: "default",
+    className: "bg-yellow-50 border-yellow-200 text-yellow-900",
+    ...options
+  });
+};
 
 export { useToast, toast }
