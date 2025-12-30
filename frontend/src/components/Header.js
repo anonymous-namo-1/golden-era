@@ -36,7 +36,7 @@ const Header = () => {
                 </button>
                 {showMegaMenu && (
                   <div className="mega-menu active" data-testid="mega-menu">
-                    <div className="max-w-7xl mx-auto px-8 py-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12">
+                    <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
                       <div>
                         <h3 className="font-semibold mb-4 text-xs uppercase tracking-wider text-gray-600">By Category</h3>
                         <ul className="space-y-3 text-sm">
@@ -49,14 +49,6 @@ const Header = () => {
                         </ul>
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-4 text-xs uppercase tracking-wider text-gray-600">By Metal</h3>
-                        <ul className="space-y-3 text-sm">
-                          <li><Link to="/shop?metal=Gold" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Gold</Link></li>
-                          <li><Link to="/shop?metal=Silver" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Silver</Link></li>
-                          <li><Link to="/shop?metal=Diamond" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Diamond</Link></li>
-                        </ul>
-                      </div>
-                      <div>
                         <h3 className="font-semibold mb-4 text-xs uppercase tracking-wider text-gray-600">By Occasion</h3>
                         <ul className="space-y-3 text-sm">
                           <li><Link to="/shop?occasion=Wedding" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Wedding</Link></li>
@@ -65,16 +57,20 @@ const Header = () => {
                           <li><Link to="/shop?occasion=Festive" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Festive</Link></li>
                           <li><Link to="/shop?occasion=Office" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Office</Link></li>
                         </ul>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-4 text-xs uppercase tracking-wider text-gray-600">By Gender</h3>
+                        <h3 className="font-semibold mb-4 mt-6 text-xs uppercase tracking-wider text-gray-600">By Gender</h3>
                         <ul className="space-y-3 text-sm">
                           <li><Link to="/shop?gender=Women" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Women</Link></li>
                           <li><Link to="/shop?gender=Men" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Men</Link></li>
                         </ul>
                       </div>
-                      <div className="md:col-span-2 lg:col-span-1">
-                        <h3 className="font-semibold mb-4 text-xs uppercase tracking-wider text-gray-600">Collections</h3>
+                      <div>
+                        <h3 className="font-semibold mb-4 text-xs uppercase tracking-wider text-gray-600">By Metal</h3>
+                        <ul className="space-y-3 text-sm">
+                          <li><Link to="/shop?metal=Gold" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Gold</Link></li>
+                          <li><Link to="/shop?metal=Silver" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Silver</Link></li>
+                          <li><Link to="/shop?metal=Diamond" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Diamond</Link></li>
+                        </ul>
+                        <h3 className="font-semibold mb-4 mt-6 text-xs uppercase tracking-wider text-gray-600">Collections</h3>
                         <ul className="space-y-3 text-sm">
                           <li><Link to="/collections" className="block text-gray-700 hover:text-[#C9A961] transition-colors">All Collections</Link></li>
                           <li><Link to="/shop?tags=bridal" className="block text-gray-700 hover:text-[#C9A961] transition-colors">Bridal</Link></li>

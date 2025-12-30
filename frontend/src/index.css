@@ -471,6 +471,27 @@ html {
     transform: translateY(0);
 }
 
+/* Mega Menu Grid Columns - Enforce minimum widths */
+.mega-menu > div > div {
+    min-width: 0; /* Allow flex shrinking */
+}
+
+.mega-menu h3 {
+    white-space: nowrap; /* Prevent heading wrapping */
+}
+
+@media (min-width: 1024px) {
+    .mega-menu > div {
+        grid-template-columns: repeat(3, minmax(220px, 1fr)) !important;
+    }
+}
+
+@media (max-width: 1023px) {
+    .mega-menu > div {
+        grid-template-columns: repeat(2, minmax(180px, 1fr)) !important;
+    }
+}
+
 /* Mobile Menu */
 .mobile-menu {
     position: fixed;
