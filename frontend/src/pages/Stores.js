@@ -8,6 +8,15 @@ const Stores = () => {
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
 
+  const handleGetDirections = (store) => {
+    // Use Google Maps with store address or coordinates if available
+    const address = encodeURIComponent(`${store.address}, ${store.city}`);
+    const url = store.latitude && store.longitude
+      ? `https://www.google.com/maps/dir/?api=1&destination=${store.latitude},${store.longitude}`
+      : `https://www.google.com/maps/search/?api=1&query=${address}`;
+    window.open(url, '_blank');
+  };
+
   const fetchStores = useCallback(async () => {
     try {
       const params = search ? `?city=${search}` : '';
@@ -68,7 +77,10 @@ const Stores = () => {
                     <p className="text-sm">{store.hours}</p>
                   </div>
                 </div>
-                <button className="mt-4 w-full border-2 border-[#C9A961] text-[#C9A961] px-4 py-2 rounded hover:bg-[#C9A961] hover:text-white transition-colors">
+                <button
+                  onClick={() => handleGetDirections(store)}
+                  className="mt-4 w-full border-2 border-[#C9A961] text-[#C9A961] px-4 py-2 rounded hover:bg-[#C9A961] hover:text-white transition-colors"
+                >
                   Get Directions
                 </button>
               </div>

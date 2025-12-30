@@ -20,6 +20,7 @@ import GoldRate from './pages/GoldRate';
 import Guides from './pages/Guides';
 import Collections from './pages/Collections';
 import PolicyPage from './pages/PolicyPage';
+import NotFound from './pages/NotFound';
 import './App.css';
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
                 <Route path="/returns" element={<PolicyPage type="returns" />} />
                 <Route path="/privacy" element={<PolicyPage type="privacy" />} />
                 <Route path="/terms" element={<PolicyPage type="terms" />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
             <Footer />

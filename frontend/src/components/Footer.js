@@ -1,8 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import api from '../services/api';
+import { useToast } from '../hooks/use-toast';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!email || !email.includes('@')) {
+      toast.error('Please enter a valid email address');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await api.post('/newsletter', { email });
+      toast.success('Successfully subscribed to our newsletter!');
+      setEmail('');
+    } catch (error) {
+      console.error('Error subscribing to newsletter:', error);
+      toast.error('Failed to subscribe. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer className="bg-[#2C2C2C] text-gray-300 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,14 +93,21 @@ const Footer = () => {
           <div className="max-w-md">
             <h3 className="text-white font-semibold mb-2">Subscribe to Our Newsletter</h3>
             <p className="text-sm mb-4">Get updates on new arrivals, exclusive offers, and more.</p>
-            <form className="flex">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-[#C9A961]"
+            <form className="flex" onSubmit={handleNewsletterSubmit}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isSubmitting}
+                className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-[#C9A961] disabled:opacity-50"
               />
-              <button type="submit" className="btn-gold px-6 py-2 text-white font-medium">
-                Subscribe
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="btn-gold px-6 py-2 text-white font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? 'Subscribing...' : 'Subscribe'}
               </button>
             </form>
           </div>
